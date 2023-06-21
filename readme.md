@@ -57,6 +57,9 @@ Too();
 ### A pure function in javascript is a function that returns the same result if the same arguments (input) are passed in the function.
 ### Pure Function is a function (a block of code ) that always returns the same result if the samenarguments are passed. It does not depend on any state, or data change during a program’sexecution rather it only depends on its input arguments.
 
+# DAY 2-
+
+
 # Q7. What is Execution Context?
 
     - This is for Synchronous JavaScript
@@ -190,5 +193,77 @@ console.log(calculate(add,10,5))
 ### 1-undefined-undefined means a variable has been declared but has not yet been assigned a value.
 ### 2- Not Defined-The value of "not defined" is similar to "undefined", in that it indicates that a variable does not exist. 
 
-### 3-Null- null is an assignment value. It can be assigned to a variable as a representation of no value:
+### 3-Null- null is an assignment value. It can be assigned to a variable as a representation of no value.
+ 
+ # DAY 3-
+# Q15-What are promises and why do we need them?
+### Promise are use to handle async operation in JS. easy to handle callback hell, also use to handle the error.
+### Promises are used to handle asynchronous operations in JavaScript. They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code.
+### Multiple callback functions would create callback hell that leads to unmanageable code. Also it is not easy for any user to handle multiple callbacks at the same time.
+## A Promise is in one of these states:
+### pending- initial state, neither fulfilled nor rejected.
+### fulfilled- meaning that the operation was completed successfully.
+### Rejected- meaning that the operation failed.
+ 
+ # Q16-What is promise chaining?
+ ### The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining.
+ ### It is  a technique to chain multiple asynchronous operation together using promises.
+ ## Example-
+
+ new Promise(function(resolve, reject) {   
+setTimeout(() => resolve(1), 1000);    
+}).then(function(result) {    
+console.log(result); // 1    
+return result * 2;    
+}).then(function(result) {     
+console.log(result); // 2    
+return result * 3;     
+}).then(function(result) {      
+console.log(result); // 6      
+return result * 4;      
+})         
+
+# Q17-What is the DOM?
+### The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web.
+### The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+
+# Q18-What are closures? Give an example of closure.
+### A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer functions  scope from an inner function.
+## Example-
+function outerFunc() {  
+var outerVar = 100;   
+function innerFunc() {   
+console.log(outerVar);   
+}   
+return innerFunc;   
+}  
+var value=outerFunc();  
+value();  
+
+# Q19-How many operators do we have in JS ?
+##  1. Arithemic operator -
+   Add(+), Sub(-), Multi(*), Div(/), Module (%), Expontial (**),   increment ++, decrement--    
+##  2. Assignment Operator-
+  Assign (=), Add Assign (+=), Sub Assign (-=), (*=), (/=), (%=)
+## 3. Bitwise Operator-  
+ Bitwise OR (|), Bitwise AND (&), Bitwise NOT (~), Left shift (<<), right shift(>>)
+##  4. Comparision Operator-
+ equal (==), strict equal (===), Not equal (!=), Strict Not equal     (!==), greate than, less than, greate than equal, less  than equal 
+##   5. Logical Operator
+       1. AND (&&)
+       2. OR (||)
+       3. Not (!)
+## 6. Ternary Operator-
+       1. (Condition) ? "Execute True Condition" : "Execute False Condition"
+ ##  7. Type of Operator-
+       1. return datatype
+
+# Q20-What are objects in javascript?
+### An object is an unordered collection of key-value pairs. Each key-value pair is called a property.
+### The key of a property can be a string. And the value of a property can be any value, e.g., a string, a number, an array, and even a function.
+-Non-premitive data type.
+
+-store date in the form of Key-Value pair saparated by colon.
+  
+
 
