@@ -264,6 +264,88 @@ value();
 -Non-premitive data type.
 
 -store date in the form of Key-Value pair saparated by colon.
-  
+# Day 4-
+# Q21-What are function constructors?
+### A constructor is a special function that creates and initializes an object instance of a class. In JS, a constructor gets called when an object is created using the new keyword. 
+- A function constructor is a way to create a object using a function as a blue print or template.
+- It allow you to define a reusable structure for creating multiple object with similar properties and method.
+## Example-
+function User (name, age) {  
+this.name = name;   
+this.age = age;   
+}   
+var user1 = new User('shubhi', 25);   
+var user2 = new User('Anjali', 27)  
+  # Q22-Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind().
+  ###  - These all three methods are used to invoke a function where we are supposed to pass an object as first argument and at the time of definition we don't have mention this object as a parameter and we can access the values of object by using this keyword in function definition.
+- Call - The call method is used to invoked a function with a specific 'this' value, and arguments provide individuly.
+- The call() method invokes a function in which first argument will be the object and rest of the arguments required by function will be provided as an individual arguments.
+ - Apply - Apply is similar with call, but take argument as an array.
+ -  The apply() method invokes a function in which first argument will be the object and rest of the arguments will be passed as an array of elements.
+ - Bind - Bind is a function that helps you create another function that you can execute later with the new context of this that is provided.
+- The bind() method returns a new function and this function will be having the reference of the object passed, now whenever you want to use this returned function in the code you can use it by passing rest of the arguments.
+## Example-
+     const Person1 = {   
+     name: "EA23",   
+     course : "MERN",  
+     age: 24   
+      }  
+
+     function Display(greet, greet1){
+     console.log(`${this.name} : ${this.age} : ${this.course} : ${greet} : ${greet1}`);
+     }
+     Display.call(Person, "Hi", "Good Evening...")  
+    Display.call(Person1, "Call", "Good Evening...")   
+    Display.apply(Person1, ["Apply", "Good Evening..."]);  
+    let result = Display.bind(Person1, "Bind", "Good Evening...");   
+     result();   
+ # Q23-What is the purpose of async/await keywords?
+ ### An async function is a function declared with the async keyword, and the await keyword is permitted within it. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need promise chains.
+     async function too() {
+
+     let promise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve("done!"), 1000)
+     });
+
+     let result = await promise; // wait until the promise resolves 
+      return result; 
+     }
+
+too();
+
+ # Q24-Explain prototypes?
+ ### Prototypes are the mechanism by which JavaScript objects inherit features from one another.Every object in JavaScript has a built-in property, which is called its prototype.The prototype is itself an object, so the prototype will have its own prototype, making what'scalled a prototype chain.The chain ends when we reach a prototype that has null for its own prototype.
+ ## Example-
+     function Student() {
+    this.name = 'Ram';
+    this.gender = 'M';
+    }
+
+    Student.prototype.age = 15;
+
+     var studObj1 = new Student();
+     console.log(studObj1.age); 
+
+     var studObj2 = new Student();
+     console.log (studObj2.age); 
+
+ # Q25-What is prototype chain?
+ ### Prototype chaining is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language. The prototype on object instance is available through Object.getPrototypeOf(object) or proto property whereas prototype on constructors function is available through Object.prototype.
+ ## Example-
+ 
+    function Person() {
+    this.name = 'Riya'
+     }
+     Person.prototype.age = 20;
+    const person1 = new Person();
+
+     console.log(person1.age); 
+    Person.prototype = { age: 50 }
+    const person3 = new Person();
+    console.log(person3.age); 
+    console.log(person1.age); 
+
+
+
 
 
